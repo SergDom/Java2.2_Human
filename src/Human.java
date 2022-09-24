@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Human {
     int dateOfBirth;
     String name;
@@ -7,7 +9,7 @@ public class Human {
 
     public Human(int dateOfBirth, String name, String city, String position) {
         if (dateOfBirth > 0) {
-            this.dateOfBirth = dateOfBirth;
+            this.dateOfBirth = LocalDate.now().getYear() - dateOfBirth;
         } else {
             this.dateOfBirth = 0;
         }
@@ -30,15 +32,16 @@ public class Human {
 
     @Override
     public String toString() {
-        return "Привет! Меня зовут " + name +". Я из города " + city + ". Я родился в " + dateOfBirth + " году. " +
+        return "Привет! Меня зовут " + name + ". Я из города " + city + ". Я родился в " + (LocalDate.now().getYear()-dateOfBirth) + " году. " +
                 "Я работаю на должности " + position + ". Будем знакомы!";
     }
 
-    public static void main (String[]args){
-            Human first = new Human(35,"Максим", "Минск", "Бренд-менеджер");
-            Human second = new Human(29, "Аня", "Москва", "Методист образовательных программ");
-            Human third = new Human(28, "Катя", "Калининград", "Продакт-менеджер");
-            Human fours = new Human(27, "Артем", "Москва", "Директор по развитию бизнеса");
+    public static void main(String[] args) {
+
+        Human first = new Human(LocalDate.now().getYear()-35, "Максим", "Минск", "Бренд-менеджер");
+        Human second = new Human(LocalDate.now().getYear()-29, "Аня", "Москва", "Методист образовательных программ");
+        Human third = new Human(LocalDate.now().getYear()-28, "Катя", "Калининград", "Продакт-менеджер");
+        Human fours = new Human(LocalDate.now().getYear()-27, "Артем", "Москва", "Директор по развитию бизнеса");
 
         System.out.println(first);
         System.out.println(second);
