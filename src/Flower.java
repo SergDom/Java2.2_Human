@@ -1,15 +1,23 @@
+import java.time.LocalDate;
+
 public class Flower {
 
+    private String flowerName;
     private String flowerColor;
     private String country;
     private double cost;
     int lifeSpan;
 
-    public Flower(String flowerColor, String country, double cost, int lifeSpan) {
+    public Flower(String flowerName, String flowerColor, String country, double cost, int lifeSpan) {
+        this.flowerName = flowerName;
         this.flowerColor = flowerColor;
         this.country = country;
         this.cost = cost;
         this.lifeSpan = lifeSpan;
+    }
+
+    public String GetFlowerName() {
+        return flowerName;
     }
 
     public String getFlowerColor() {
@@ -42,11 +50,25 @@ public class Flower {
     }
 
     public void setCost(double cost) {
-        if (cost <= 0){
+        if (cost <= 0) {
             cost = 1;
+        } else {
+            this.cost = cost;
         }
-        else { this.cost = cost;
-        }
+    }
+
+    public void printInfo() {
+        System.out.println("Название: " + flowerName + ". Цвет: " + flowerColor + ". Страна: " + country + " Стоимость: "
+                + cost + " Срок стояния: " + lifeSpan);
     }
 }
 
+class FlowerTest {
+    public static void main(String[] args) {
+
+
+
+    }
+
+
+}
