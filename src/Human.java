@@ -44,19 +44,21 @@ public class Human {
                 "Я работаю на должности " + position + ". Будем знакомы!";
     }
 
-    public static void main(String[] args) {
+    public static class HumanTest {
+        public static void main(String[] args) {
 
-        Human first = new Human(LocalDate.now().getYear() - 35, "Максим", "Минск", "Бренд-менеджер");
-        Human second = new Human(LocalDate.now().getYear() - 29, "Аня", "Москва", "Методист образовательных программ");
-        Human third = new Human(LocalDate.now().getYear() - 28, "Катя", "Калининград", "Продакт-менеджер");
-        Human fours = new Human(LocalDate.now().getYear() - 27, "Артем", "Москва", "Директор по развитию бизнеса");
-        Human five = new Human();
+            Human first = new Human(LocalDate.now().getYear() - 35, "Максим", "Минск", "Бренд-менеджер");
+            Human second = new Human(LocalDate.now().getYear() - 29, "Аня", "Москва", "Методист образовательных программ");
+            Human third = new Human(LocalDate.now().getYear() - 28, "Катя", "Калининград", "Продакт-менеджер");
+            Human fours = new Human(LocalDate.now().getYear() - 27, "Артем", "Москва", "Директор по развитию бизнеса");
+            Human five = new Human();
 
-        System.out.println(first);
-        System.out.println(second);
-        System.out.println(third);
-        System.out.println(fours);
-        System.out.println(five);
+            System.out.println(first);
+            System.out.println(second);
+            System.out.println(third);
+            System.out.println(fours);
+            System.out.println(five);
+        }
     }
 }
 
