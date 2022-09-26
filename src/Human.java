@@ -1,9 +1,9 @@
 import java.time.LocalDate;
 
 public class Human {
-    int dateOfBirth;
+    private int dateOfBirth;
     String name;
-    String city;
+    private String city;
     String position;
 
 
@@ -18,8 +18,8 @@ public class Human {
         } else {
             this.name = name;
         }
-        if (city == null) {
-            this.city = " 'Информация не указана'";
+        if (city == null && city.isEmpty()) {
+            this.city = " 0 ";
         } else {
             this.city = city;
         }
@@ -36,6 +36,22 @@ public class Human {
         this.name = " 'Информация не указана'";
         this.city = " 'Информация не указана'";
         this.position = " 'Информация не указана'";
+    }
+
+    public int getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(int dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCity() {
+        return city;
     }
 
     @Override

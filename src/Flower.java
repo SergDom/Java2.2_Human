@@ -10,10 +10,18 @@ public class Flower {
 
     public Flower(String flowerName, String flowerColor, String country, double cost, int lifeSpan) {
         this.flowerName = flowerName;
-        this.flowerColor = flowerColor;
+
+        if (flowerColor == null && flowerColor.isEmpty() && flowerColor.isBlank()) {
+            this.flowerColor = "белый";
+        } else this.flowerColor = flowerColor;
         this.country = country;
         this.cost = cost;
-        this.lifeSpan = lifeSpan;
+
+        if (lifeSpan == 0) {
+            this.lifeSpan = 3;
+        } else {
+            this.lifeSpan = lifeSpan;
+        }
     }
 
     public String GetFlowerName() {
@@ -37,9 +45,9 @@ public class Flower {
     }
 
     public void setFlowerColor(String flowerColor) {
-        if (flowerColor != null && !flowerColor.isEmpty() && !flowerColor.isBlank()) {
-            this.flowerColor = flowerColor;
-        } else flowerColor = "белый";
+        if (flowerColor == null && flowerColor.isEmpty() && flowerColor.isBlank()) {
+            this.flowerColor = "белый";
+        } else flowerColor = flowerColor;
     }
 
 
@@ -66,8 +74,11 @@ public class Flower {
 class FlowerTest {
     public static void main(String[] args) {
 
+        Flower first = new Flower("Роза обыкновенная", null, "Голландия", 35.00, 0);
 
+//        System.out.println(first.getFlowerColor());
 
+first.printInfo();
     }
 
 
