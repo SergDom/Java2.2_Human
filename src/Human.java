@@ -25,7 +25,7 @@ public class Human {
             this.city = city;
         }
         if (position == null) {
-            this.position = " 'Информация не указана'";
+            this.position = " 'нигде не работает'";
         } else {
             this.position = position;
         }
@@ -78,7 +78,8 @@ class HumanTest {
         Human second = new Human(LocalDate.now().getYear() - 29, "Аня", "Москва", "Методист образовательных программ");
         Human third = new Human(LocalDate.now().getYear() - 28, "Катя", "Калининград", "Продакт-менеджер");
         Human fours = new Human(LocalDate.now().getYear() - 27, "Артем", "Москва", "Директор по развитию бизнеса");
-        Human five = new Human();
+        Human five = new Human(LocalDate.now().getYear() - 21, "Владимир", "Казань", null);
+
 
         System.out.println(first);
         System.out.println(second);
